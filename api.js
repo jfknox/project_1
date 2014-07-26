@@ -53,10 +53,10 @@ var retroGameCharacters = { profiles: [
 			removed: false
 		},{
 			pic: "",
-			gName: "",
-			year: "",
-			console: "",
-			charName: "", 
+			gName: "Super Mario World",
+			year: "1991",
+			console: "Super Nintendo",
+			charName: "Yoshi", 
 			removed: false
 		},{
 			pic: "",
