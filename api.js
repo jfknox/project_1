@@ -39,10 +39,10 @@ var retroGameCharacters = { profiles: [
 			removed: false
 		},{
 			pic: "",
-			gName: "Haggar",
-			year: "1991",
+			gName: "Castlevainia 4",
+			year: "1992",
 			console: "Super Nintendo",
-			charName: "Final Fight", 
+			charName: "Simon", 
 			removed: false
 		},{
 			pic: "",
