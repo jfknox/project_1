@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<!-- connect angular -->
+<html ng-app= "retro-estApp">
+<head>
+	<title>Retro-est</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="api.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Play:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="head">Retro-est</div>
+		<!-- set a controller for angular -->
+	<div ng-controller="profilesCtrl">
+		<div id="total">
+			<!-- display the total number of items -->
+			<span>{{ totalProfiles()}} retro gaming icon profiles created. </span><br/> 
+		</div>
+		<!-- have a search area -->
+		<input id="search" type="text" placeholder= "Retro Search" ng-model="searchText"/> 
+		<section id="wrapper">
+	        <div id="columns">
+		        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" draggable="true" ondragstart="drag(event)" >
+		          <img ng-src="{{profile.pic}}">
+		          <hr>
+		          <div>
+		            <h2>{{profile.charName}}</h2>
+		            <hr>
+		            <h4>{{profile.gName}}</h4>
+		          </div>
+		          <hr>
+		          <label><input type="checkbox" placeholder="Slay this Character!!!" x-ng-model="profile.slain"> Slay this character!!!</label>
+		        </div>
+	        </div> 
+		
+		
+		<div>
+			<!-- link and link to function to remove pics -->
+			<a href="" ng-click="removeProfile();"> Remove selected profile from your collection.  </a> 
+		</div>
+		<!-- create inputs to add pics  -->	
+			<form ng-submit="addNewProfile();">
+			 	<!-- make inputs to collect item and quantity to be added -->
+			 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic">
+			 	<input type="text" size="35" placeholder="What game is that from?" ng-model='newGname'>
+			 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear">
+			 	<input type="text" size="35" placeholder="What console was it on?" ng-model='newConsole'>
+			 	<input type="text" size="35" placeholder="What is the pictured characters name?"  ng-model="newCharName"> <br/>
+			 	<!-- put the button to add the values -->
+			 	<input type="submit" value="Add New Profile">
+			 </form>
+		</section>
+		<img src="https://developers.google.com/_static/9d3db1b94a/images/developers-logo.svg" draggable="true" ondragstart="drag(event)" >
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id ="info"> 
+			<footer>
+				<ul id="foot">
+				<li> Let me know what you think!</li>
+				<li>Crazy Joe Industries</li>
+				<li>Dayyyyyuuuuummm</li>
+				</ul>
+			</footer>
+		</div>
+
+
+	</div>
+</body>
