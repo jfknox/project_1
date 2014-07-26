@@ -39,10 +39,17 @@ var retroGameCharacters = { profiles: [
 			removed: false
 		},{
 			pic: "",
-			gName: "",
-			year: "",
-			console: "",
-			charName: "", 
+			gName: "Haggar",
+			year: "1991",
+			console: "Super Nintendo",
+			charName: "Final Fight", 
+			removed: false
+		},{
+			pic: "",
+			gName: "Metroid",
+			year: "1988",
+			console: "Nintendo",
+			charName: "Samus", 
 			removed: false
 		},{
 			pic: "",
@@ -137,17 +144,10 @@ var retroGameCharacters = { profiles: [
 			removed: false
 		},{
 			pic: "",
-			gName: "",
-			year: "",
-			console: "",
-			charName: "", 
-			removed: false
-		},{
-			pic: "",
-			gName: "",
-			year: "",
-			console: "",
-			charName: "", 
+			gName: "Ness",
+			year: "1992",
+			console: "Super Nintendo",
+			charName: "Earthbound", 
 			removed: false
 		},
 
