@@ -39,10 +39,10 @@ var retroGameCharacters = { profiles: [
 			removed: false
 		},{
 			pic: "",
-			gName: "",
-			year: "",
-			console: "",
-			charName: "", 
+			gName: "Castlevainia 4",
+			year: "1992",
+			console: "Super Nintendo",
+			charName: "Simon", 
 			removed: false
 		},{
 			pic: "",
