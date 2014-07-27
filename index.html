@@ -4,10 +4,12 @@
 <head>
 	<title>Retro-est</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="api.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Play:700' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 			<!-- set a controller for angular -->
@@ -35,7 +37,7 @@
 			<section id="wrapper">	    
 	        <div id="columns">
 		        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" draggable="true" ondragstart="drag(event)" >
-		          <img ng-src="{{profile.pic}}">
+		          <img draggable="false" ng-src="{{profile.pic}}">
 		          <hr>
 		          <div>
 		            <h4>{{profile.gName}}</h4>
@@ -45,7 +47,21 @@
 
 		<!-- create inputs to add pics  -->	
 		</section>
-		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div id="gameover"> Game Over!</div>
+		<div id="delete" ondrop="drop(event)" ondragover="allowDrop(event)">
+			
+			
+		</div>
+
+		<div >
+				<img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png">
+		</div>
+
+		<div id="plant">
+				<img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"> <br>
+		</div>
+
+
 
 		<div id ="info"> 
 			<footer>

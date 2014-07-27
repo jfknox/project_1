@@ -91,9 +91,6 @@ h4 {
 CHARACTER ADD
 ************************/
 
-
-
-
 .new {
   display: none;
   float:left;
@@ -106,10 +103,6 @@ CHARACTER ADD
   text-align: center;
 }
 
-.newbie {
-  display: block;
-  margin: 5px;
-}
 
 /************************
 MASONRY
@@ -169,46 +162,49 @@ column-count: 5;
 }
 }
 
+/***************************
+DELETE
+***************************/
 
-
-
-#div1 {width:350px;height:auto;padding:10px;border:1px solid #aaaaaa;}
-
-/*
-.content { 	position: relative;
-	border:1px #1b346c solid;
-	width: 300px;
-	background-color: white;
-	opacity: .7;
-	border-radius:10px;
-	margin-top: -10px;
-}
-/*
-li { display: inline-block;
-	margin: 0px;
+#plant {
+  z-index:3;
+  position:fixed;
+  right:5px;
+  bottom:0px;
 }
 
-ul { list-style:none;
+#pipe {
+  z-index: 4;
+  width: 70px;
+  height: auto;
+  position:fixed;
+  right:15px;
+  bottom:0px;
 }
 
-img { border-radius: 10px;
-	 position:relative; 
-	border:1px #1b346c solid; 
-	background:#f1f1f1; 
+#delete {
+    z-index: 5;
+    height: 175px;
+    width: 160px;
+    border: 3px dashed black;
+    position:fixed;
+    right:0;
+    bottom:0px;
 }
 
-input{ border:0;  
-    padding: 12px;
-    font-size: 18px;
-    }
-#names{
-	font-size: 20px;
-}
-div footer ul li {
-	border:1px #1b346c solid;
-	display: inline-block;
-	margin: 0px;
-	padding: 10px;
+#gameover {
+   margin-bottom: 20px;
+    position:fixed;
+    right:1px;
+    bottom:125px;
+    margin:0;
+  
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #CCC;
+    padding: 1px;
+
+
 }
 
-*/

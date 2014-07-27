@@ -61,7 +61,9 @@ app.controller('profilesCtrl', function($scope) {
 
 });
 
-
+//////////////////////////////
+//Functions for the HTML DRAG AND DROP
+/////////////////////////////
   var draggedElement;
 		function allowDrop(ev) {
     	ev.preventDefault();
@@ -78,11 +80,24 @@ app.controller('profilesCtrl', function($scope) {
 	    ev.target.appendChild(draggedElement);
 }
 
- 
+ //////////////////////////////////
+ //Functions for the animation of the piranha plant
+ //////////////////////////////////    
+$(document).ready(function() {
+		var $Delete = $("#delete");
+		var $plant = $("#plant");
+//create a $pics and $content variable to reduce the amount of times I access the DOM
 
-
-
-
+//when the mouse enters make the object bigger.
+    $Delete.mouseenter(function() {
+   		$(plant).css('height', '80px').animate({ height: 150 }, 1750);
+    }); 
+//return to normal size when mouse leaves
+    $Delete.mouseleave(function() {
+		$(plant).css('height', '150px').animate({ height: 80 }, 1750);
+		
+	});
+});
 
 
 
