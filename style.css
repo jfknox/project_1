@@ -91,9 +91,17 @@ h4 {
 CHARACTER ADD
 ************************/
 
-.new {
-  display: none;
+#button {
   float:left;
+  text-align: center;
+  padding: 5px;
+}
+
+
+.new {
+  position:absolute;
+  left:8px;
+ 
   border: 2px solid black;
   border-radius: 10px;
   max-width: 210px; 

@@ -50,13 +50,7 @@ app.controller('profilesCtrl', function($scope) {
 	$scope.totalProfiles = function() {
 	//total number of items
 		var remaining = $scope.profiles.length;
-		//angualr for each loop 
-		angular.forEach($scope.profiles, function(profile){ 
-			if (profile.removed) {
-				remaining--;
-			}
-	});
-	return remaining
+		return remaining
 }
 
 });
@@ -97,7 +91,51 @@ $(document).ready(function() {
 		$(plant).css('height', '150px').animate({ height: 80 }, 1750);
 		
 	});
+
+
+////////////////////////////////////////
+//Function to get the New character form to drop down
+////////////////////////////////////////
+
+	$("#button").click(function() {
+		$(".new").show("slow");
+	});
+
+	$("#submit").click(function() {
+		$(".new").hide("slow")
+	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

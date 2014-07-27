@@ -22,15 +22,18 @@
 			<!-- have a search area -->
 			<input id="search" type="text" placeholder= "Retro Search" ng-model="searchText"/> 
 
-			<form ng-submit="addNewProfile();" class="new" >
+			<input id="button" type="button" value="Add Another Picture">
+			<br>
+
+			<form ng-submit="addNewProfile();" class="new" style="display: none">
 			 	<!-- make inputs to collect item and quantity to be added -->
 			 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic">
 			 	<input type="text" size="35" placeholder="What game is that from?" ng-model='newGname'>
 			 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear">
 			 	<input type="text" size="35" placeholder="What console was it on?" ng-model='newConsole'>
-			 	<input type="text" size="35" placeholder="Ccharacters name(s)?"  ng-model="newCharName"> <br/>
+			 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br/>
 			 	<!-- put the button to add the values -->
-			 	<input type="submit" value="Add New Profile">
+			 	<input type="submit" value="Add New Profile" id="submit">
 			</form>
 
 		</header>
