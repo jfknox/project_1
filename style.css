@@ -192,9 +192,8 @@ DELETE
 
 #delete {
     z-index: 5;
-    height: 175px;
-    width: 160px;
-    border: 3px dashed black;
+    height: 160px;
+    width: 85px;
     position:fixed;
     right:0;
     bottom:0px;
@@ -204,7 +203,7 @@ DELETE
    margin-bottom: 20px;
     position:fixed;
     right:1px;
-    bottom:125px;
+    bottom:135px;
     margin:0;
   
     z-index: 1;
