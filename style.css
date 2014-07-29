@@ -13,6 +13,7 @@ HEADER
   border-radius: 10px;
   border: 2px solid black;
   background: grey;
+  height: 120px;
  }
 
  #title {
@@ -202,7 +203,7 @@ DELETE
 #gameover {
    margin-bottom: 20px;
     position:fixed;
-    right:1px;
+    right:22px;
     bottom:135px;
     margin:0;
   
