@@ -216,3 +216,69 @@ DELETE
 
 }
 
+/****************************
+FAVORITE
+*****************************/
+
+#mario {
+  z-index:3;
+  position:fixed;
+  left:5px;
+  bottom:0px;
+}
+
+#fpipe {
+  z-index: 4;
+  width: 70px;
+  height: auto;
+  position:fixed;
+  right:15px;
+  bottom:0px;
+}
+
+#favorite {
+    z-index: 5;
+    height: 160px;
+    width: 85px;
+    position:fixed;
+    right:0;
+    bottom:0px;
+}
+
+#gameover {
+   margin-bottom: 20px;
+    position:fixed;
+    right:22px;
+    bottom:135px;
+    margin:0;
+  
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #CCC;
+    padding: 1px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
