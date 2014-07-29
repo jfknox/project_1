@@ -16,8 +16,6 @@
 }
 
  //////////////////////////////////
-
- 
  //Functions for the animation of the piranha plant
  //////////////////////////////////   
 
@@ -30,9 +28,17 @@
 /////////////////////////////////////////
 //Angular framework
 /////////////////////////////////////////
-var app = angular.module("retro-estApp", []); 
-app.controller('profilesCtrl', function($scope) {
-	$scope.profiles = retroGameCharacters.profiles;
+
+
+	
+
+var app = angular.module("retro-estApp", ["firebase"]); 
+app.controller('profilesCtrl', function($scope, $firebase) {
+	//make Firebase usable and store it in a var
+	var profileRef =new Firebase("https://retro-est.firebaseio.com/")
+    $scope.profiles = $firebase(profileRef);
+	
+
 	//create variables to store info
 	$scope.newPic = "";
 	$scope.newGname = "";
@@ -44,14 +50,16 @@ app.controller('profilesCtrl', function($scope) {
 ///////////////////////////////
 	$scope.addNewProfile = function() {
 		if ($scope.newPic != "") {
-			$scope.profiles.push({
-				pic: $scope.newPic, 
-				gName: $scope.newGname,
-				year: $scope.newYear,
-				console: $scope.newConsole, 
-				charName: $scope.newCharName,
-				removed: false
-			})
+			
+		
+			$scope.profiles.$add({
+				pic:$scope.newPic, 
+				gName:$scope.newGname, 
+				year:$scope.newYear, 
+				console:$scope.newConsole, 	
+				charName:$scope.newCharName
+			});
+
 		}
 		else{
 			alert("Please add a valid picture!")
