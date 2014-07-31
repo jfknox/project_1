@@ -82,5 +82,16 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 		}
 }
 
+//////////////////////////////////////
+///MODAL PICTURE FUNCTION
+/////////////////////////////////////
+
+$scope.setModalPicture = function(picture) {
+	$scope.modalPicture = picture;
+}
+
+
+ 
+
 
 });
