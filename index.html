@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<!-- connect angular -->
+<!-- connect angular --> 
 <html ng-app= "retro-estApp">
 <head>
 	<title>Retro-est</title>
@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- angular drag and drop -->
+	<script type="text/javascript" src="draganddrop.js"></script>
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -91,8 +93,8 @@
 		</div>
 			<section id="wrapper">	    
 	        <div id="columns">
-		        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" draggable="true" ondragstart="drag(event)" >
-		          <img id="image" ng-click= "deleteProfile(profile)" draggable="false" ng-src="{{profile.pic}}">
+		        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)">
+		          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
 
 		          <hr>
 		          <div>
@@ -104,12 +106,12 @@
 
 		</section>
 		<div id="ftag"> Heart! </div>
- 		<div id="favorite" ondrop="dropheart(event)" ondragover="allowDrop(event)"></div>
+ 		<div id="favorite" ui-on-drop="dropheart($data)" ></div>
  		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
  		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:3; position:fixed; left:30px; bottom:30px;"/> <br></div>
 
 		<div id="gameover" ng-click="addToFirebase()"> Delete! </div>
-		<div id="delete" ondrop="dropdelete(event)" ondragover="allowDrop(event)"></div>
+		<div id="delete" ui-on-drop="dropdelete($data)"></div>
 		<div ><img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
 		<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"/> <br></div>
 

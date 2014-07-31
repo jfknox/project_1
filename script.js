@@ -1,37 +1,7 @@
 /////////////////////////////////
-//Vanila JS
+//Vanila JS 
 /////////////////////////////////
 
-
-//////////////////////////////
-//Functions for the HTML DRAG AND DROP
-/////////////////////////////
-    var draggedElement;
-		function allowDrop(ev) {
-    	ev.preventDefault();
-}
-
-	function drag(ev) {
-    	draggedElement = ev.target;
-}
-
- //////////////////////////////////
- //Functions for the animation of the piranha plant and mario
- //////////////////////////////////   
-
-	function dropdelete(ev) {
-	    ev.preventDefault();
-	    $(draggedElement).fadeOut("slow", draggedElement.remove)
-	    $(plant).animate({ height: 150 }, 1250);
-	    $(plant).animate({ height: 100 }, 1250);
-}
-
-	function dropheart(ev) {
-	    ev.preventDefault();
-	    $(draggedElement).fadeOut("slow", draggedElement.remove)
-	    $(mario).animate({ bottom: 200 }, 1250);
-	    $(mario).animate({ bottom: 50 }, 1250);
-}
 
 
 
@@ -40,8 +10,7 @@
 //Angular framework
 /////////////////////////////////////////	
 
-var app = angular.module("retro-estApp", ["firebase"]); 
-
+var app = angular.module("retro-estApp", ["firebase", "ngDragDrop"])
 app.controller('profilesCtrl', function($scope, $firebase) {
 	//make Firebase usable and store it in a var
 	var profileRef = new Firebase("https://retro-est.firebaseio.com/")
@@ -57,6 +26,7 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 
 
 	$scope.addToFirebase = function() {
+		console.log("yeah")
 		var myArray = retroGameCharacters.profiles;
 		for (var i = 0; i < myArray.length; i++) {
 			$scope.profiles.$add(myArray[i]);
@@ -96,12 +66,38 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 //////////////////////////////////
 //remove function
 /////////////////////////////////
-$scope.deleteProfile = function(profile) {
-	console.log("Profile ID:");
-	console.log(profile.$id);
-	var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
-	itemRef.remove();
+
+
+ //////////////////////////////////
+ //Functions for the animation of the piranha plant and mario
+ //////////////////////////////////   
+
+
+
+	$scope.dropdelete = function(profile) {
+	    isdeleted = true
+	    $(plant).animate({ height: 150 }, 1250);
+	    $(plant).animate({ height: 100 }, 1250);
 }
+
+	$scope.dropheart = function(profile) {
+		isdeleted = false
+	    $(mario).animate({ bottom: 200 }, 1250);
+	    $(mario).animate({ bottom: 50 }, 1250);
+}
+
+	$scope.imageDrop = function(profile) {
+		console.log(profile.$id)
+		if (isdeleted) {
+			var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
+			itemRef.remove();
+		}
+		else{
+			//favorite page
+		}
+}
+
+
 
 
 });
