@@ -4,7 +4,9 @@
   font-family: 'Play', sans-serif;
   margin: 0;
 }
-  
+  html,body{
+    height: 100%
+}
 /************************
 HEADER
 ************************/
@@ -14,12 +16,8 @@ HEADER
   padding: 2px;
  }
 
-.navbar {
-  margin-bottom: 0px;
-}
-
-#add {
-  display: inline-block;
+.navbar .btn {
+  margin-top: 0;
 }
 
 .jumbotron {
@@ -45,6 +43,11 @@ HEADER
 #toFireBase {
   display: none;
 }
+
+/************************
+CHARACTER ADD
+************************/
+
 
 .top {
   margin-top: 25px;
@@ -124,21 +127,6 @@ h4 {
   line-height: 7px;
 }
 
-/************************
-CHARACTER ADD
-************************/
-
-#button {
-  float:left;
-  text-align: center;
-  padding: 5px;
-}
-
-
-.new {
-  float: left;
-  text-align: center;
-}
 
 
 /************************
