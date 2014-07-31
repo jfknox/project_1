@@ -4,9 +4,7 @@
   font-family: 'Play', sans-serif;
   margin: 0;
 }
-  html,body{
-    height: 100%
-}
+  
 /************************
 HEADER
 ************************/
@@ -16,8 +14,14 @@ HEADER
   padding: 2px;
  }
 
-.navbar .btn {
-  margin-top: 0;
+.navbar {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 15px;
+}
+
+#add {
+  display: inline-block;
 }
 
 .jumbotron {
@@ -225,6 +229,50 @@ DELETE
     background: #CCC;
     padding: 1px;
 
+
+}
+
+
++/****************************
+ +FAVORITE
+ +*****************************/
+    
+#mario {
+ 
+
+}
+
+#fpipe {
+  z-index: 4;
+  width: 70px;
+  height: auto;
+  position:fixed;
+  left:15px;
+  bottom:0px;
+}
+
+#favorite {
+  z-index: 5;
+  height: 160px;
+  width: 85px;
+  position:fixed;
+  left:0;
+  bottom:0px;
+  
+}
+
+#ftag {
+  z-index: 6;
+  margin-bottom: 20px;
+  position:fixed;
+  left:27px;
+  bottom:15px;
+  margin:0;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #CCC;
+  padding: 1px;
+   
 
 }
 

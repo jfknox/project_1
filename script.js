@@ -19,12 +19,20 @@
  //Functions for the animation of the piranha plant and mario
  //////////////////////////////////   
 
-	function drop(ev) {
+	function dropdelete(ev) {
 	    ev.preventDefault();
-	    $(draggedElement).hide("slow", draggedElement.remove)
+	    $(draggedElement).fadeOut("slow", draggedElement.remove)
 	    $(plant).animate({ height: 150 }, 1250);
 	    $(plant).animate({ height: 100 }, 1250);
 }
+
+	function dropheart(ev) {
+	    ev.preventDefault();
+	    $(draggedElement).fadeOut("slow", draggedElement.remove)
+	    $(mario).animate({ bottom: 200 }, 1250);
+	    $(mario).animate({ bottom: 50 }, 1250);
+}
+
 
 
 
