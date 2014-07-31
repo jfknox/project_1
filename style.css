@@ -8,31 +8,51 @@
 /************************
 HEADER
 ************************/
- #head {
-  overflow: hidden;
-  border-radius: 10px;
-  border: 2px solid black;
-  background: grey;
-  height: 120px;
- }
-
- #title {
-  font-size: 3em;  
- }
 
  #search {
   float: right;
   padding: 2px;
  }
 
-#total {
-  
-  border: 1px solid black;
-  border-radius: 3px;
-  background-color: #CCC;
-  padding: 4px;
+.navbar {
+  margin-bottom: 0px;
 }
 
+#add {
+  display: inline-block;
+}
+
+.jumbotron {
+  background: url("jumbo.jpg");
+}
+
+.container {
+  text-align: left;
+}
+
+.ptext{
+  color:black;
+}
+
+#titlel {
+  color:black;
+}
+
+#id {
+  float:right;
+}
+
+#toFireBase {
+  display: none;
+}
+
+.top {
+  margin-top: 25px;
+}
+
+#form {
+  text-align: center;
+}
 
 /************************
 BODY
@@ -44,6 +64,11 @@ BODY
   clear: both;
 }
 
+body {
+  background:transparent;
+  font-family: 'Play', sans-serif;
+}
+
 
 /************************
 PROFILE
@@ -53,11 +78,22 @@ PROFILE
   border: 2px inset #CCC;
   border-radius: 10px;
   margin-bottom: 3px;
-  background: grey;
+  background-color: grey;
 }
 
 .profile:hover {
   border: 2px outset #CCC;
+}
+
+#heart {
+  z-index: 2;
+  width:19px;
+  float:right;
+  left: 10px;
+}
+
+#image {
+  border-radius: 10px;
 }
 
 hr {
@@ -100,15 +136,7 @@ CHARACTER ADD
 
 
 .new {
-  position:absolute;
-  left:8px;
- 
-  border: 2px solid black;
-  border-radius: 10px;
-  max-width: 210px; 
-  padding:5px;
-  margin: 5px auto;
-  background: #CCC;
+  float: left;
   text-align: center;
 }
 
@@ -137,8 +165,6 @@ column-fill: auto;
 
 .profile {
 display: inline-block;
-background: #FEFEFE  ;
-border: 2px solid #FAFAFA  ;
 box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 margin: 0 2px 0 4px ;
 -webkit-column-break-inside: avoid;
@@ -146,7 +172,6 @@ margin: 0 2px 0 4px ;
 column-break-inside: avoid;
 
 padding-bottom: 5px;
-background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9  );
 opacity: 1;
 
 -webkit-transition: all .2s ease;
@@ -201,13 +226,12 @@ DELETE
 }
 
 #gameover {
-   margin-bottom: 20px;
+    z-index: 6;
+    margin-bottom: 20px;
     position:fixed;
-    right:22px;
-    bottom:135px;
+    right:24px;
+    bottom:15px;
     margin:0;
-  
-    z-index: 1;
     border: 1px solid black;
     border-radius: 5px;
     background: #CCC;
@@ -215,70 +239,4 @@ DELETE
 
 
 }
-
-/****************************
-FAVORITE
-*****************************/
-
-#mario {
-  z-index:3;
-  position:fixed;
-  left:5px;
-  bottom:0px;
-}
-
-#fpipe {
-  z-index: 4;
-  width: 70px;
-  height: auto;
-  position:fixed;
-  right:15px;
-  bottom:0px;
-}
-
-#favorite {
-    z-index: 5;
-    height: 160px;
-    width: 85px;
-    position:fixed;
-    right:0;
-    bottom:0px;
-}
-
-#gameover {
-   margin-bottom: 20px;
-    position:fixed;
-    right:22px;
-    bottom:135px;
-    margin:0;
-  
-    z-index: 1;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: #CCC;
-    padding: 1px;
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -3,83 +3,124 @@
 <html ng-app= "retro-estApp">
 <head>
 	<title>Retro-est</title>
-     <!-- add firebase library -->
-    <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
-    <!-- connect angular -->
+ 	<!-- connect angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <!-- add firebase library -->
+    <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
     <!-- add the angularfire  library-->
-    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
     <!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!-- JavaScript -->
 	<script type="text/javascript" src="script.js"></script>
 	<!-- data -->
 	<script type="text/javascript" src="api.js"></script>
-	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- font -->
 	<link href='http://fonts.googleapis.com/css?family=Play:700' rel='stylesheet' type='text/css'>
+	<!-- font awesome -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
 			<!-- set a controller for angular -->
-		<div ng-controller="profilesCtrl">
-		<header id="head">
-			<div id="title">Retro-est</div>
-			<div id="total">
-				<!-- display the total number of items -->
-			<span>{{ totalProfiles()}} Pictures</span><br/> </div>
-			<!-- have a search area -->
-			<input id="search" type="text" placeholder= "Retro Search" ng-model="searchText"/> 
+	<div ng-controller="profilesCtrl">
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header"> 
+		      <a class="navbar-brand"  href="#">Gaming-Propagada-ist</a>
+		    </div>
+	    	<ul class="nav navbar-nav">
 
-			<input id="button" type="button" value="Add Another Picture">
-			<br>
+	        	<li>
+	        		<button class="btn btn-primary btn-danger " class="top" data-toggle="modal" data-target="#myModal">Add More Propaganda </button>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Add More Propaganda</h4>
+					      </div>
+					      <div class="modal-body">
+					       		<form ng-submit="addNewProfile();" class="new"	>
+								 	<!-- make inputs to collect item and quantity to be added -->
+								 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic"> <br>
+								 	<input type="text" size="35" placeholder="What unverse is that from?" ng-model='newGname'> <br>
+								 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear"> <br>
+								 	<input type="text" size="35" placeholder="Where can this universe be found?" ng-model='newConsole'><br>
+								 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br/><br>
+						
+								</form>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>
+			 				<button type="submit"  class="btn btn-default btn-danger" id="submit"> Add more Truth! </button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+		        <li><button type="button" class="btn btn-default btn-danger" class="top" >Hearted Propaganda</button></li>
+		        <li class="dropdown">
+			 </ul>
+		        <form class="navbar-form navbar-right" role="search">
+			        <div class="form-group">
+			          <input id="search" type="text" placeholder= "Propaganda Search" ng-model="searchText"/>
+			        </div>
+			    </form>	
+		  </div>
+		</nav>
 
-			<form ng-submit="addNewProfile();" class="new" style="display: none">
-			 	<!-- make inputs to collect item and quantity to be added -->
-			 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic">
-			 	<input type="text" size="35" placeholder="What game is that from?" ng-model='newGname'>
-			 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear">
-			 	<input type="text" size="35" placeholder="What console was it on?" ng-model='newConsole'>
-			 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br/>
-			 	<!-- put the button to add the values -->
-			 	<input type="submit" value="Add New Profile" id="submit">
-			</form>
 
-		</header>
+
+	
+
+		
+		<div class="jumbotron">
+			 <div class="container">
+			    <h1 id="titlel">Propaganda-</h1>
+			    <h4 class="ptext">noun /.pra-pe-'gan-dah </h4>
+				<h3 class="ptext">ideas or statements that are often false or exaggerated and that are spread in order to help a cause, a political leader, a government, etc.</h3>
+			 </div>
+		</div>
 			<section id="wrapper">	    
 	        <div id="columns">
 		        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" draggable="true" ondragstart="drag(event)" >
-		          <img draggable="false" ng-src="{{profile.pic}}">
+		          <img id="image" ng-click= "deleteProfile(profile)" draggable="false" ng-src="{{profile.pic}}">
 
 		          <hr>
 		          <div>
 		            <h4>{{profile.gName}}</h4>
+		            
 		          </div>
 		        </div>
 	        </div> 
 
 		</section>
-		<div id="ftag"> Favorite! </div>
-		<div id="fSquare" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"></div>
-		<div id="mario"><img src="http://rocketdock.com/images/screenshots/Mario_Jump.png"> <br></div>
+		
 
-		<div id="gameover"> Delete! </div>
+		<div id="gameover" ng-click="addToFirebase()"> Delete! </div>
 		<div id="delete" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 		<div ><img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"></div>
 		<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"> <br></div>
 
 		<div id ="info"> 
 			<footer>
-				
+
 				<div> Let me know what you think!</div>
 				<div>Crazy Joe Industries</div>
 				<div>Dayyyyyuuuuummm</div>
-				
+
 			</footer>
 		</div>
-
-
 	</div>
+
+<button id="toFireBase" type="submit" ng-click="addToFirebase();"> Add To Firebase </button>
+
 </body>
