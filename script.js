@@ -1,11 +1,3 @@
-/////////////////////////////////
-//Vanila JS 
-/////////////////////////////////
-
-
-
-
-
 /////////////////////////////////////////
 //Angular framework
 /////////////////////////////////////////	
@@ -24,18 +16,15 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 	$scope.newConsole = "";
 	$scope.newCharName = "";
 
-
+/////////////////////////////////
+//adds all of my API
+///////////////////////////////
 	$scope.addToFirebase = function() {
-		console.log("yeah")
 		var myArray = retroGameCharacters.profiles;
 		for (var i = 0; i < myArray.length; i++) {
 			$scope.profiles.$add(myArray[i]);
 		}
 	};
-
-
-
-
 
 /////////////////////////////////
 // new function that adds items
@@ -51,28 +40,25 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 				console:$scope.newConsole, 	
 				charName:$scope.newCharName
 			});
-
+			//reset the profile variables
+			$scope.newPic = "";
+			$scope.newGname = "";
+			$scope.newYear = "";
+			$scope.newConsole = "";	
+			$scope.newCharName = "";	
+	
 		}
 		else{
 			alert("Please add a valid picture!")
 		}
-			//reset the profile variables
-				$scope.newPic = "";
-				$scope.newGname = "";
-				$scope.newYear = "";
-				$scope.newConsole = "";	
-				$scope.newCharName = "";	
+
 	};
-//////////////////////////////////
-//remove function
-/////////////////////////////////
+
 
 
  //////////////////////////////////
- //Functions for the animation of the piranha plant and mario
+ //Functions for the animation of the piranha plant and mario and remove function as well as drag and drop
  //////////////////////////////////   
-
-
 
 	$scope.dropdelete = function(profile) {
 	    isdeleted = true
@@ -87,7 +73,6 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 }
 
 	$scope.imageDrop = function(profile) {
-		console.log(profile.$id)
 		if (isdeleted) {
 			var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
 			itemRef.remove();
@@ -98,63 +83,4 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 }
 
 
-
-
 });
-////////////////////////////////
-//Jquery framework
-///////////////////////////////
-$(document).ready(function() {
-     
-
-////////////////////////////////////////
-//Function to get the New character form to drop down
-////////////////////////////////////////
-// 	$("#button").click(function() {
-// 		$(".new").toggle("slow");
-// 	});
-
-// 	$("#submit").click(function() {
-// 		$(".new").hide("slow")
-// 	});
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

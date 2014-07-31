@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
 <!-- connect angular --> 
-<html ng-app= "retro-estApp">
+<html ng-app= "retro-estApp"> 
 <head>
 	<title>Retro-est</title>
  	<!-- connect angular -->
@@ -110,7 +110,7 @@
  		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
  		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:3; position:fixed; left:30px; bottom:30px;"/> <br></div>
 
-		<div id="gameover" ng-click="addToFirebase()"> Delete! </div>
+		<div id="gameover"> Delete! </div>
 		<div id="delete" ui-on-drop="dropdelete($data)"></div>
 		<div ><img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
 		<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"/> <br></div>
@@ -124,8 +124,9 @@
 
 			</footer>
 		</div>
+		<button id="toFireBase" type="submit" ng-click="addToFirebase()"> Add To Firebase </button>
+
 	</div>
 
-<button id="toFireBase" type="submit" ng-click="addToFirebase();"> Add To Firebase </button>
 
 </body>
