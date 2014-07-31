@@ -49,8 +49,19 @@ HEADER
 }
 
 /************************
-CHARACTER ADD
+CHARACTER ADD and MODAL
 ************************/
+
+
+
+
+.modal-backdrop {
+  background: red;
+}
+ 
+.modal-body {
+  background-image: url("vader.jpg")
+}
 
 
 .top {
@@ -92,12 +103,6 @@ PROFILE
   border: 2px outset #CCC;
 }
 
-#heart {
-  z-index: 2;
-  width:19px;
-  float:right;
-  left: 10px;
-}
 
 #image {
   border-radius: 10px;
@@ -218,7 +223,7 @@ DELETE
 }
 
 #gameover {
-    z-index: 6;
+    z-index: 5;
     margin-bottom: 20px;
     position:fixed;
     right:24px;

@@ -12,7 +12,7 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 	//create variables to store info
 	$scope.newPic = "";
 	$scope.newGname = "";
-	$scope.newYear = ""; 
+	$scope.newYear = "";  
 	$scope.newConsole = "";
 	$scope.newCharName = "";
 
@@ -66,7 +66,7 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 	    $(plant).animate({ height: 100 }, 1250);
 }
 
-	$scope.dropheart = function(profile) {
+	$scope.droplike = function(profile) {
 		isdeleted = false
 	    $(mario).animate({ bottom: 200 }, 1250);
 	    $(mario).animate({ bottom: 50 }, 1250);
@@ -78,7 +78,7 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 			itemRef.remove();
 		}
 		else{
-			//favorite page
+			
 		}
 }
 
