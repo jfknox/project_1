@@ -47,11 +47,7 @@
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						  <div class="modal-dialog">
 						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						        <h4 class="modal-title" id="myModalLabel">Add More Propaganda</h4>
-						      </div>
-						      <div class="modal-body">
+						        <div class="modal-body">
 						       		<form ng-submit="addNewProfile();" class="new"	>
 									 	<!-- make inputs to collect item and quantity to be added -->
 									 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic"> <br>
@@ -67,7 +63,7 @@
 						      </div>
 						      
 						    </div>
-						  </div>
+						  </div>    
 						</div>
 			        	<li><button type="button" class="btn btn-default btn-danger" class="top" >Liked Propaganda</button></li>
 			        </li class="dropdown">
@@ -88,7 +84,7 @@
 			</div>
 				<section id="wrapper">	    
 		        <div id="columns">
-			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-sm" ng-click="setModalPicture(profile.pic)">
+			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile.pic)">
 			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
 
 			          <hr>
@@ -101,8 +97,8 @@
 
 			</section>
 
-			<div class="modal fade bs-view-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
-			    <div class="modal-dialog modal-sm">
+			<div class="modal fade bs-view-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
+			    <div class="modal-dialog modal-lg">
 			      <div class="modal-content">
 			        <img class="modalPicture" src="{{modalPicture}}">
 			      </div>
@@ -121,7 +117,7 @@
 			<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"/> <br></div>
 
 			
-			<button id="toFireBase" type="submit" ng-click="addToFirebase()"> Add To Firebase </button>
+			<button id="toFireBase" type="submit" ng-click="addToFirebase()" > Add To Firebase </button>
 
 		</div>
 	</div>

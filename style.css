@@ -53,14 +53,13 @@ CHARACTER ADD and MODAL
 ************************/
 
 .modalPicture {
-  max-height: 750px;
-  max-width: 750px;
-  text-align: center;
+  max-height: 600px;
+  max-width: 600px;
+ 
 }
 
-
 .modal-backdrop {
-  background: red;
+
 }
  
 .modal-body {
@@ -68,7 +67,17 @@ CHARACTER ADD and MODAL
 }
 
 .modal-content {
+  max-width: 500px;
+  max-height:750px;
+  background-color: black;
+  background:rgba(0,0,0,.2);
   
+ 
+}
+
+.modal-dialog {
+  max-width: 500px;
+  max-height: 750px;
 }
 
 .top {

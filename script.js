@@ -31,8 +31,6 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 ///////////////////////////////
 	$scope.addNewProfile = function() {
 		if ($scope.newPic != "") {
-			
-		
 			$scope.profiles.$add({
 				pic:$scope.newPic, 
 				gName:$scope.newGname, 
@@ -42,12 +40,13 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 				removed: false
 			});
 			//reset the profile variables
-			$scope.newPic = "";
-			$scope.newGname = "";
-			$scope.newYear = "";
-			$scope.newConsole = "";	
-			$scope.newCharName = "";	
-	
+		$scope.newPic = "";
+		$scope.newGname = "";
+		$scope.newYear = "";
+		$scope.newConsole = "";	
+		$scope.newCharName = "";	
+
+		$('#myModal').modal('hide')
 		}
 		else{
 			alert("Please add a valid picture!")
