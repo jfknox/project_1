@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <!-- connect angular --> 
 <html ng-app= "retro-estApp"> 
 <head>
@@ -30,103 +30,106 @@
 
 </head>
 <body>
+	<div id="footer">
 			<!-- set a controller for angular -->
-	<div ng-controller="profilesCtrl">
-		<nav class="navbar navbar-inverse" role="navigation">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header"> 
-		      <a class="navbar-brand"  href="#">Gaming-Propagada-ist</a>
-		    </div>
-	    	<ul class="nav navbar-nav">
+		<div ng-controller="profilesCtrl">
+			<nav class="navbar navbar-inverse" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header"> 
+			      <a class="navbar-brand"  href="#">Gaming-Propagada-ist</a>
+			    </div>
+		    	<ul class="nav navbar-nav">
 
-	        	<li>
-	        		<button class="btn btn-primary btn-danger " class="top" data-toggle="modal" data-target="#myModal">Add More Propaganda </button>
-					<!-- Modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					  <div class="modal-dialog">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					        <h4 class="modal-title" id="myModalLabel">Add More Propaganda</h4>
-					      </div>
-					      <div class="modal-body">
-					       		<form ng-submit="addNewProfile();" class="new"	>
-								 	<!-- make inputs to collect item and quantity to be added -->
-								 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic"> <br>
-								 	<input type="text" size="35" placeholder="What unverse is that from?" ng-model='newGname'> <br>
-								 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear"> <br>
-								 	<input type="text" size="35" placeholder="Where can this universe be found?" ng-model='newConsole'><br>
-								 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br/><br>
-									<div class="modal-footer">
-										<button type="submit"  class="btn btn-default btn-danger" id="submit"> Add more Truth! </button>
-						        		<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
-					     			</div>
-								</form>
-					      </div>
-					      
-					    </div>
-					  </div>
-					</div>
-		        <li><button type="button" class="btn btn-default btn-danger" class="top" >Hearted Propaganda</button></li>
-		        <li class="dropdown">
-			 </ul>
-		        <form class="navbar-form navbar-right" role="search">
-			        <div class="form-group">
-			          <input id="search" type="text" placeholder= "Propaganda Search" ng-model="searchText"/>
+		        	<li>
+		        		<button class="btn btn-primary btn-danger " class="top" data-toggle="modal" data-target="#myModal">Add More Propaganda </button>
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Add More Propaganda</h4>
+						      </div>
+						      <div class="modal-body">
+						       		<form ng-submit="addNewProfile();" class="new"	>
+									 	<!-- make inputs to collect item and quantity to be added -->
+									 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic"> <br>
+									 	<input type="text" size="35" placeholder="What unverse is that from?" ng-model='newGname'> <br>
+									 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear"> <br>
+									 	<input type="text" size="35" placeholder="Where can this universe be found?" ng-model='newConsole'><br>
+									 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br> <br>
+										<div class="modal-footer">
+											<button type="submit"  class="btn btn-default btn-danger" id="submit"> Add more Truth! </button>
+							        		<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
+						     			</div>
+									</form>
+						      </div>
+						      
+						    </div>
+						  </div>
+						</div>
+			        	<li><button type="button" class="btn btn-default btn-danger" class="top" >Liked Propaganda</button></li>
+			        </li class="dropdown">
+				 </ul>
+			        <form class="navbar-form navbar-right" role="search">
+				        <div class="form-group">
+				          <input id="search" type="text" placeholder= "Propaganda Search" ng-model="searchText"/>
+				        </div>
+				    </form>	
+			  </div>
+			</nav>
+			<div class="jumbotron">
+				 <div class="container">
+				    <h1 id="titlel">Propaganda-</h1>
+				    <h4 class="ptext">noun /.pra-pe-'gan-dah </h4>
+					<h3 class="ptext">ideas or statements that are often false or exaggerated and that are spread in order to help a cause, a political leader, a government, etc.</h3>
+				 </div>
+			</div>
+				<section id="wrapper">	    
+		        <div id="columns">
+			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-sm" ng-click="setModalPicture(profile.pic)">
+			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
+
+			          <hr>
+			          <div>
+			            <h4>{{profile.gName}}</h4>
+			            
+			          </div>
 			        </div>
-			    </form>	
-		  </div>
-		</nav>
+		        </div> 
+
+			</section>
+
+			<div class="modal fade bs-view-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
+			    <div class="modal-dialog modal-sm">
+			      <div class="modal-content">
+			        <img class="modalPicture" src="{{modalPicture}}">
+			      </div>
+			    </div>
+			</div>
 
 
+			<div id="ftag"> Like! </div>
+	 		<div id="favorite" ui-on-drop="droplike($data)" ></div>
+	 		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
+	 		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:3; position:fixed; left:30px; bottom:30px;"/> <br></div>
 
-	
+			<div id="gameover"> Delete! </div>
+			<div id="delete" ui-on-drop="dropdelete($data)"></div>
+			<div ><img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
+			<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"/> <br></div>
 
-		
-		<div class="jumbotron">
-			 <div class="container">
-			    <h1 id="titlel">Propaganda-</h1>
-			    <h4 class="ptext">noun /.pra-pe-'gan-dah </h4>
-				<h3 class="ptext">ideas or statements that are often false or exaggerated and that are spread in order to help a cause, a political leader, a government, etc.</h3>
-			 </div>
+			
+			<button id="toFireBase" type="submit" ng-click="addToFirebase()"> Add To Firebase </button>
+
 		</div>
-			<section id="wrapper">	    
-	        <div id="columns">
-		        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)">
-		          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
-
-		          <hr>
-		          <div>
-		            <h4>{{profile.gName}}</h4>
-		            
-		          </div>
-		        </div>
-	        </div> 
-
-		</section>
-		<div id="ftag"> Heart! </div>
- 		<div id="favorite" ui-on-drop="dropheart($data)" ></div>
- 		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
- 		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:3; position:fixed; left:30px; bottom:30px;"/> <br></div>
-
-		<div id="gameover"> Delete! </div>
-		<div id="delete" ui-on-drop="dropdelete($data)"></div>
-		<div ><img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
-		<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"/> <br></div>
-
+	</div>
 		<div id ="info"> 
 			<footer>
-
-				<div> Let me know what you think!</div>
-				<div>Crazy Joe Industries</div>
-				<div>Dayyyyyuuuuummm</div>
-
+				<div class="footer">
+       				<p> Project 1 | JFK Industries | Angular.JS </p>
+ 				</div>
 			</footer>
 		</div>
-		<button id="toFireBase" type="submit" ng-click="addToFirebase()"> Add To Firebase </button>
-
-	</div>
-
-
 </body>

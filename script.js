@@ -1,4 +1,4 @@
-/////////////////////////////////////////
+///////////////////////////////////////// 
 //Angular framework
 /////////////////////////////////////////	
 
@@ -38,7 +38,8 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 				gName:$scope.newGname, 
 				year:$scope.newYear, 
 				console:$scope.newConsole, 	
-				charName:$scope.newCharName
+				charName:$scope.newCharName,
+				removed: false
 			});
 			//reset the profile variables
 			$scope.newPic = "";
@@ -53,7 +54,6 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 		}
 
 	};
-
 
 
  //////////////////////////////////
@@ -81,6 +81,15 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 			
 		}
 }
+
+///////////////////////////////////
+//function to make picture modal
+///////////////////////////////////
+
+$scope.setModalPicture = function(picture) {
+			$scope.modalPicture = picture;
+
+	}
 
 //////////////////////////////////////
 ///MODAL PICTURE FUNCTION

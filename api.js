@@ -1,71 +1,13 @@
 var retroGameCharacters = { profiles: [
 		{
-			pic: "http://media-cache-ec0.pinimg.com/736x/a2/ca/12/a2ca120e16dd4dc655adc889b33f9e1a.jpg",
-			gName: "Super Mario Bros.",
-			year: "1985",
-			console: "Nintendo",
-			charName: "Luigi", 
-			removed: false
-		},
-		{
-			pic: "http://media-cache-ak0.pinimg.com/474x/9b/c4/7d/9bc47d69965424614463016f735d6428.jpg",
-			gName: "Kirby Dream World",
-			year: "1990",
-			console: "Nintendo",
-			charName: "Kirby", 
-			removed: false
-		}, 
-		{
-			pic: "http://media-cache-ak0.pinimg.com/474x/63/68/b7/6368b7af4eb145fa0e402dfacb3cf923.jpg",
-			gName: "Mario Brothers 2",
-			year: "1988",
-			console: "Nintendo",
-			charName: "Shy Guy", 
-			removed: false
-		},
-		{
 			pic: "http://media-cache-ak0.pinimg.com/736x/1a/92/ee/1a92ee6378e9eec960e4a95c747f3871.jpg",
 			gName: "Mario Brothers",
 			year: "1985",
 			console: "Nintendo",
 			charName: "Bowser", 
 			removed: false
-		},{
-			pic: "http://media-cache-ak0.pinimg.com/736x/5f/c8/3f/5fc83ff269eb5b322164abb455023c9b.jpg",
-			gName: "The Legend of Zelda",
-			year: "1985",
-			console: "Nintendo",
-			charName: "Link", 
-			removed: false
-		},{
-			pic: "http://1.bp.blogspot.com/-QorgITDBbH0/T5IVJqkgJEI/AAAAAAAAHZg/pFy8HtUUqjs/s1600/scivbnn.png",
-			gName: "Castlevainia 4",
-			year: "1992",
-			console: "Super Nintendo",
-			charName: "Simon", 
-			removed: false
-		},{
-			pic: "http://upload.wikimedia.org/wikipedia/en/5/5d/Metroid_boxart.jpg",
-			gName: "Metroid",
-			year: "1988",
-			console: "Nintendo",
-			charName: "Samus", 
-			removed: false
-		},{
-			pic: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT39fhgIwjfsyXnu7uWFCR_Q1IDyAPHY8FN6F885KlnDmiPVHhR",
-			gName: "Super Mario World",
-			year: "1991",
-			console: "Super Nintendo",
-			charName: "Yoshi", 
-			removed: false
-		},{
-			pic: "http://cdn.wikimg.net/strategywiki/images/d/df/Ice_Climber_screen1.png",
-			gName: "Ice Climbers",
-			year: "1986",
-			console: "Nintendo",
-			charName: "Ice Climbers", 
-			removed: false
-		},{
+		},
+		{
 			pic: "http://25.media.tumblr.com/tumblr_lqcn81dwG61qc2eojo1_500.jpg",
 			gName: "Mario Bros",
 			year: "1985",
@@ -135,20 +77,89 @@ var retroGameCharacters = { profiles: [
 			console: "Super Nintendo",
 			charName: "Mario", 
 			removed: false
-		},{
+		},
+		{
+			pic: "http://bensbargains.net/thecheckout/wp-content/uploads/2013/05/Pro-empire-keep-him-flying.jpg",
+			gName: "Star Wars",
+			year: "1985",
+			console: "Movie",
+			charName: "Storm Trooper", 
+			removed: false
+		},
+		{
+			pic: "http://t0.gstatic.com/images?q=tbn:ANd9GcRqHwo319hTVBDAy4YV7siUuTdaottJcSKLPyJ2wZev1U2EiiTz",
+			gName: "Star Wars",
+			year: "1985",
+			console: "Movie",
+			charName: "Storm Trooper", 
+			removed: false
+		},
+		{
 			pic: "http://cache.gawkerassets.com/assets/images/9/2012/02/e7ebf1bb8beef82a8b7fb54388ad11ae.jpg",
 			gName: "Mario Bros",
 			year: "1985",
 			console: "Nintendo",
 			charName: "Mario", 
 			removed: false
-		},{
-			pic: "http://assets.vg247.com/current//2013/04/mother-2-aka-earthbound.jpg",
-			gName: "Earthbound",
-			year: "1992",
-			console: "Super Nintendo",
-			charName: "Ness", 
+		},
+		{
+			pic: "http://a.tgcdn.net/images/products/additional/large/de7f_retro_videogame_propaganda_posters_digdug.jpg",
+			gName: "Dig-Dug",
+			year: "1985",
+			console: "Arcade",
+			charName: "DigDug", 
 			removed: false
 		},
+		{
+			pic: "http://a.tgcdn.net/images/products/additional/large/de7f_retro_videogame_propaganda_posters_frogger.jpg",
+			gName: "Frogger",
+			year: "1985",
+			console: "Arcade",
+			charName: "Frogger", 
+			removed: false
+		},
+		{
+			pic: "http://collider.com/wp-content/uploads/illustrator-steve-thomas-classic-video-game-poster-tron-2-400x600.jpg",
+			gName: "Tron",
+			year: "1985",
+			console: "Arcade",
+			charName: "Tron", 
+			removed: false
+		},
+		{
+			pic: "http://3.bp.blogspot.com/-w5Zx1R503U4/UjEJevvWRKI/AAAAAAAAE2E/sWbElPUp-iI/s1600/spaceinvaders.jpg",
+			gName: "Space Invaders",
+			year: "1985",
+			console: "Arcade",
+			charName: "Alien", 
+			removed: false
+		},
+		{
+			pic: "http://3.bp.blogspot.com/-vIhzNvkaEmI/UjEJfKy2CUI/AAAAAAAAE10/38ISc3vNLLc/s1600/stevethomas_centipedesmall.jpg",
+			gName: "Centipede",
+			year: "1985",
+			console: "Arcade",
+			charName: "Centipede", 
+			removed: false
+		},
+		{
+			pic: "https://static.squarespace.com/static/51b3dc8ee4b051b96ceb10de/51ce6099e4b0d911b4489b79/51ce61c3e4b0d911b449ff0d/1267328399013/1000w/star_wars_trading_card_propaganda_poster_01.jpg",
+			gName: "Star Wars",
+			year: "1985",
+			console: "Movie",
+			charName: "Darth Vader", 
+			removed: false
+		},
+		{
+			pic: "http://bensbargains.net/thecheckout/wp-content/uploads/2013/05/pro-empire-before-all.jpg",
+			gName: "Star Wars",
+			year: "1985",
+			console: "Movie",
+			charName: "Storm Trooper", 
+			removed: false
+		},
+		
+		
+	
 
 	]};
