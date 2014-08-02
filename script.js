@@ -58,7 +58,7 @@ app.controller('profilesCtrl', function($scope, $firebase) {
  //////////////////////////////////
  //Functions for the animation of the piranha plant and mario and remove function as well as drag and drop
  //////////////////////////////////   
-
+ 
 	$scope.dropdelete = function(profile) {
 	    isdeleted = true
 	    $(plant).animate({ height: 150 }, 1250);
@@ -67,19 +67,25 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 
 	$scope.droplike = function(profile) {
 		isdeleted = false
-	    $(mario).animate({ bottom: 200 }, 1250);
-	    $(mario).animate({ bottom: 50 }, 1250);
+	    	if (profile.removed == true) {
+	    		$(bowser).css("bottom", 1000).animate({ bottom: 0 }, 2250);
+	    		// $(bowser).animate({ bottom: 50 }, 1250);
+	    	}
+	    	else {
+	    		$(mario).animate({ bottom: 200 }, 1250);
+	    		$(mario).animate({ bottom: 50 }, 1250);
+	    	}
 }
 
 	$scope.imageDrop = function(profile) {
-		if (isdeleted) {
-			var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
+		var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
+		var toggleLike = $firebase(itemRef);
+		if (isdeleted) {			
 			itemRef.remove();
 		}
 			//toggles the removed boolean value
 		else{
-			var removedBool = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
-			removedBool = !removedBool
+			toggleLike.$update({removed: !profile.removed})
 		}
 }
 

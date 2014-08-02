@@ -90,7 +90,7 @@
 			          
 
 			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
-			          <div id="star"> <img  src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Star-icon.png">
+			          <div>  <img  ng-show="profile.removed" id="star" src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Star-icon.png">
 			          </div>
 			          <hr>
 			          <div>
@@ -115,6 +115,7 @@
 	 		<div id="favorite" ui-on-drop="droplike($data)" ></div>
 	 		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
 	 		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:3; position:fixed; left:30px; bottom:30px;"/> <br></div>
+	 		<div id="bowser"><img style="width: 60px;" src="bowser.png"/> <br></div>
 
 			<div id="gameover"> Delete! </div>
 			<div id="delete" ui-on-drop="dropdelete($data)"></div>

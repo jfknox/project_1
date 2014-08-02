@@ -26,7 +26,9 @@ HEADER
 
 .jumbotron {
   background: url("jumbo.jpg");
+  background-size: 100%;
 }
+
 
 .container {
   text-align: left;
@@ -262,9 +264,12 @@ DELETE
  FAVORITE
  ****************************/
     
-#mario {
- 
-
+#bowser {
+   
+  z-index:3; 
+  position:fixed; 
+  left:20px; 
+  bottom:1000px;"
 }
 
 #fpipe {
