@@ -43,33 +43,55 @@
 			      <a class="navbar-brand"  href="#">Gaming-Propagada-ist</a>
 			    </div>
 		    	<ul class="nav navbar-nav">
-
 		        	<li>
 		        		<button class="btn btn-primary btn-danger " class="top" data-toggle="modal" data-target="#myModal">Add More Propaganda </button>
 						<!-- Modal -->
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						  <div class="modal-dialog">
-						    <div class="modal-content">
-						        <div class="modal-body">
-						       		<form ng-submit="addNewProfile();" class="new"	>
-									 	<!-- make inputs to collect item and quantity to be added -->
-									 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic"> <br>
-									 	<input type="text" size="35" placeholder="What unverse is that from?" ng-model='newGname'> <br>
-									 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear"> <br>
-									 	<input type="text" size="35" placeholder="Where can this universe be found?" ng-model='newConsole'><br>
-									 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br> <br>
-										<div class="modal-footer">
-											<button type="submit"  class="btn btn-default btn-danger" id="submit"> Add more Truth! </button>
-							        		<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
-						     			</div>
-									</form>
-						      </div>						      
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							    <div class="modal-dialog">
+								    <div class="modal-content">
+								        <div class="modal-body">
+								       		<form ng-submit="addNewProfile();" class="new"	>
+											 	<!-- make inputs to collect item and quantity to be added -->
+											 	<input type="text" size="35" placeholder="Add a picture URL"  ng-model="newPic"> <br>
+											 	<input type="text" size="35" placeholder="What unverse is that from?" ng-model='newGname'> <br>
+											 	<input type="text" size="35" placeholder="When was it made?"  ng-model="newYear"> <br>
+											 	<input type="text" size="35" placeholder="Where can this universe be found?" ng-model='newConsole'><br>
+											 	<input type="text" size="35" placeholder="Characters name(s)?"  ng-model="newCharName"> <br> <br>
+												<div class="modal-footer">
+													<button type="submit"  class="btn btn-default btn-danger" id="submit"> Add more Truth! </button>
+									        		<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
+								     			</div>
+											</form>
+								        </div>						      
+								    </div>
+							    </div>    
 						    </div>
-						  </div>    
-						</div>
-			        	<li><button type="button" class="btn btn-default btn-danger" class="top" >Liked Propaganda</button></li>
-			        </li class="dropdown">
-				 </ul>
+			        	<button type="button" class="btn btn-default btn-danger" class="top" data-toggle="modal" data-target="#favModal" >Liked Propaganda</button>		
+			        		<!-- modal -->
+
+					        <div class="modal fade" id="favModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							 	<div class="modal-dialog">
+									<div class="modal-content">										
+								        <div class="modal-body">
+  											<div class="modal-header">
+								 			 	<h2 class="modal-title" id="myModalLabel">Liked Propaganda</h4>
+								 			</div>
+								 			<div>
+									 			
+										        <div class="favProfile" ng-show="profile.removed" x-ng-repeat="profile in profiles | filter:searchText" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile)">
+										         	<img id="favImage" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" ng-show="profile.removed" ng-src="{{profile.pic}}">
+										        </div>
+									     
+								 			</div>									      
+								 			<div class="modal-footer">
+						        				<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
+					     					</div>		
+								        </div>													 	
+									</div>											    							 		
+							 	</div>    
+							</div>		        	
+				    </li >
+				</ul>
 			        <form class="navbar-form navbar-right" role="search">
 				        <div class="form-group">
 				          <input id="search" type="text" placeholder= "Propaganda Search" ng-model="searchText"/>
@@ -86,12 +108,12 @@
 			</div>
 				<section id="wrapper">	    
 		        <div id="columns">
-			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile.pic)">
-			          
+			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile)">
+			          <div id="starr">  <img  ng-show="profile.removed" id="star" src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Star-icon.png">
+			          </div>
 
 			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
-			          <div>  <img  ng-show="profile.removed" id="star" src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Star-icon.png">
-			          </div>
+			          
 			          <hr>
 			          <div>
 			            <h4>{{profile.gName}}</h4>
@@ -102,10 +124,10 @@
 
 			</section>
 
-			<div class="modal fade bs-view-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
+			<div class="modal fade bs-view-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="picModal">
 			    <div class="modal-dialog modal-lg">
 			      <div class="modal-content">
-			        <img class="modalPicture" src="{{modalPicture}}">
+			        <img class="modalPicture" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" src="{{modalPicture}}">
 			      </div>
 			    </div>
 			</div>
@@ -114,7 +136,7 @@
 			<div id="ftag"> Like! </div>
 	 		<div id="favorite" ui-on-drop="droplike($data)" ></div>
 	 		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
-	 		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:3; position:fixed; left:30px; bottom:30px;"/> <br></div>
+	 		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:49999; position:fixed; left:30px; bottom:30px;"/> <br></div>
 	 		<div id="bowser"><img style="width: 60px;" src="bowser.png"/> <br></div>
 
 			<div id="gameover"> Delete! </div>

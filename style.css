@@ -121,9 +121,20 @@ PROFILE
   border: 2px outset #CCC;
 }
 
-
 #image {
   border-radius: 10px;
+  z-index: -1;
+}
+
+#starr {
+    position: relative;
+}
+#star  {
+    height:35px;
+    width: 35px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
 hr {
@@ -138,7 +149,8 @@ h2 {
 }
 
 h4 {
-  margin: 5px 0;
+  margin: 15px ;
+
   text-align: center;
 }
 
@@ -154,10 +166,45 @@ h4 {
   line-height: 7px;
 }
 
-#star {
-  height:15px;
-  width: 15px;
+/************************
+FAVORITE PROFILES
+************************/
+
+.favProfile {
+  border: 2px inset #CCC;
+  border-radius: 10px;
+  margin-bottom: 3px;
+  background-color: grey;
+  display: inline-block;
 }
+
+.favProfile:hover {
+  border: 2px outset #CCC;
+}
+
+#favImage {
+  border-radius: 10px;
+  z-index: -1;
+  display: inline-block;
+  width: 150px;
+  height:auto;
+
+}
+
+.favprofile img {
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+ 
+}
+
+.favProfile p {
+  text-align: center;
+  line-height: 7px;
+}
+
+
+
 
 
 /************************
@@ -220,14 +267,14 @@ DELETE
 ***************************/
 
 #plant {
-  z-index:3;
+  z-index:49999;
   position:fixed;
   right:5px;
   bottom:0px;
 }
 
 #pipe {
-  z-index: 4;
+  z-index: 50000;
   width: 70px;
   height: auto;
   position:fixed;
@@ -236,7 +283,7 @@ DELETE
 }
 
 #delete {
-    z-index: 5;
+    z-index: 50002;
     height: 160px;
     width: 85px;
     position:fixed;
@@ -245,7 +292,7 @@ DELETE
 }
 
 #gameover {
-    z-index: 5;
+    z-index: 50001;
     margin-bottom: 20px;
     position:fixed;
     right:24px;
@@ -266,14 +313,14 @@ DELETE
     
 #bowser {
    
-  z-index:3; 
+  z-index:49999; 
   position:fixed; 
   left:20px; 
   bottom:1000px;"
 }
 
 #fpipe {
-  z-index: 4;
+  z-index: 50000;
   width: 70px;
   height: auto;
   position:fixed;
@@ -282,7 +329,7 @@ DELETE
 }
 
 #favorite {
-  z-index: 5;
+  z-index: 50002;
   height: 160px;
   width: 85px;
   position:fixed;
@@ -292,7 +339,7 @@ DELETE
 }
 
 #ftag {
-  z-index: 6;
+  z-index: 50001;
   margin-bottom: 20px;
   position:fixed;
   left:32px;

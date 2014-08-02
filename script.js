@@ -60,12 +60,15 @@ app.controller('profilesCtrl', function($scope, $firebase) {
  //////////////////////////////////   
  
 	$scope.dropdelete = function(profile) {
+		profile = profile || draggedProfile
 	    isdeleted = true
 	    $(plant).animate({ height: 150 }, 1250);
 	    $(plant).animate({ height: 100 }, 1250);
+	    $('#picModal').modal('hide')
 }
 
 	$scope.droplike = function(profile) {
+		profile = profile || draggedProfile
 		isdeleted = false
 	    	if (profile.removed == true) {
 	    		$(bowser).css("bottom", 1000).animate({ bottom: 0 }, 2250);
@@ -78,6 +81,7 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 }
 
 	$scope.imageDrop = function(profile) {
+		profile = profile || draggedProfile
 		var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
 		var toggleLike = $firebase(itemRef);
 		if (isdeleted) {			
@@ -87,15 +91,8 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 		else{
 			toggleLike.$update({removed: !profile.removed})
 		}
+
 }
-
-
-
-
-//////////////////////////////////////
-//function that displays the modal of favorites
-/////////////////////////////////////
-
 
 
 
@@ -103,20 +100,11 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 //function to make picture modal
 ///////////////////////////////////
 
-$scope.setModalPicture = function(picture) {
-			$scope.modalPicture = picture;
+$scope.setModalPicture = function(profile) {
+			$scope.modalPicture = profile.pic;
+			draggedProfile = profile
 
 	}
-
-//////////////////////////////////////
-///MODAL PICTURE FUNCTION
-/////////////////////////////////////
-
-$scope.setModalPicture = function(picture) {
-	$scope.modalPicture = picture;
-}
-
-
  
 
 
