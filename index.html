@@ -68,7 +68,6 @@
 						    </div>
 			        	<button type="button" class="btn btn-default btn-danger" class="top" data-toggle="modal" data-target="#favModal" >Liked Propaganda</button>		
 			        		<!-- modal -->
-
 					        <div class="modal fade" id="favModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							 	<div class="modal-dialog">
 									<div class="modal-content">										
@@ -76,12 +75,10 @@
   											<div class="modal-header">
 								 			 	<h2 class="modal-title" id="myModalLabel">Liked Propaganda</h4>
 								 			</div>
-								 			<div>
-									 			
+								 			<div>									 			
 										        <div class="favProfile" ng-show="profile.removed" x-ng-repeat="profile in profiles | filter:searchText" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile)">
 										         	<img id="favImage" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" ng-show="profile.removed" ng-src="{{profile.pic}}">
 										        </div>
-									     
 								 			</div>									      
 								 			<div class="modal-footer">
 						        				<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
@@ -111,19 +108,15 @@
 			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile)">
 			          <div id="starr">  <img  ng-show="profile.removed" id="star" src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Star-icon.png">
 			          </div>
-
 			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
-			          
 			          <hr>
 			          <div>
-			            <h4>{{profile.gName}}</h4>
-			            
+			            <h4>{{profile.gName}}</h4>           
 			          </div>
 			        </div>
 		        </div> 
-
 			</section>
-
+			<!-- modal to show zoomed in picture -->
 			<div class="modal fade bs-view-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="picModal">
 			    <div class="modal-dialog modal-lg">
 			      <div class="modal-content">
@@ -131,22 +124,19 @@
 			      </div>
 			    </div>
 			</div>
-
-
+			<!-- mario and bowser -->
 			<div id="ftag"> Like! </div>
 	 		<div id="favorite" ui-on-drop="droplike($data)" ></div>
 	 		<div ><img id="fpipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
 	 		<div><img id="mario"src="http://rocketdock.com/images/screenshots/Mario_Jump.png" style="width: 35px; z-index:49999; position:fixed; left:30px; bottom:30px;"/> <br></div>
 	 		<div id="bowser"><img style="width: 60px;" src="bowser.png"/> <br></div>
-
+	 		<!-- piranah plant -->
 			<div id="gameover"> Delete! </div>
 			<div id="delete" ui-on-drop="dropdelete($data)"></div>
 			<div ><img id="pipe" src="http://www.clker.com/cliparts/T/R/h/S/4/i/a-green-cartoon-pipe-md.png"/></div>
 			<div id="plant"><img src="http://www.plantascarnivorasbr.com/forum/download/file.php?avatar=9769_1334780623.gif"/> <br></div>
-
-			
+			<!-- Button to re load my API to firebase -->
 			<button id="toFireBase" type="submit" ng-click="addToFirebase()" > Add To Firebase </button>
-
 		</div>
 	</div>
 		<div id ="info"> 
