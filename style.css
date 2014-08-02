@@ -71,7 +71,7 @@ CHARACTER ADD and MODAL
   max-height:750px;
   background-color: black;
   background:rgba(0,0,0,.2);
-  
+
  
 }
 
@@ -152,6 +152,10 @@ h4 {
   line-height: 7px;
 }
 
+#star {
+  height:15px;
+  width: 15px;
+}
 
 
 /************************

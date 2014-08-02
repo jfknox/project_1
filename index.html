@@ -27,6 +27,9 @@
 	<script type="text/javascript" src="draganddrop.js"></script>
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" 
+      type="image/png" 
+      href="http://www.mariowiki.com/images/f/f6/NSMBWiiEBowser2.png">
 
 </head>
 <body>
@@ -60,8 +63,7 @@
 							        		<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Close</button>	
 						     			</div>
 									</form>
-						      </div>
-						      
+						      </div>						      
 						    </div>
 						  </div>    
 						</div>
@@ -85,8 +87,11 @@
 				<section id="wrapper">	    
 		        <div id="columns">
 			        <div class="profile" x-ng-repeat="profile in profiles | filter:searchText" ui-draggable="true" drag="profile" on-drop-success="imageDrop(profile)" data-toggle="modal" data-target=".bs-view-modal-lg" ng-click="setModalPicture(profile.pic)">
-			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
+			          
 
+			          <img id="image" ui-draggable="false" ng-src="{{profile.pic}}">
+			          <div id="star"> <img  src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Star-icon.png">
+			          </div>
 			          <hr>
 			          <div>
 			            <h4>{{profile.gName}}</h4>

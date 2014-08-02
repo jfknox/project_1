@@ -76,10 +76,22 @@ app.controller('profilesCtrl', function($scope, $firebase) {
 			var itemRef = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
 			itemRef.remove();
 		}
+			//toggles the removed boolean value
 		else{
-			
+			var removedBool = new Firebase("https://retro-est.firebaseio.com/" + profile.$id);
+			removedBool = !removedBool
 		}
 }
+
+
+
+
+//////////////////////////////////////
+//function that displays the modal of favorites
+/////////////////////////////////////
+
+
+
 
 ///////////////////////////////////
 //function to make picture modal
